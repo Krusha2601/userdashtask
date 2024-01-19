@@ -8,7 +8,7 @@ const dataFilePath = path.resolve(__dirname, "../db.json");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
-const itemsPerPage = 3; 
+const itemsPerPage = 5; 
 app.get("/userdashboard/users", (req, res) => {
    
   const page = req.query.page || 1;
