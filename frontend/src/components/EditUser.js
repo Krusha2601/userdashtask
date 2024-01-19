@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 const EditUser = ({ isOpen, onClose, id }) => {
     const navigate = useNavigate();
@@ -16,9 +17,10 @@ const EditUser = ({ isOpen, onClose, id }) => {
         const data = await response.json();
         console.log(data);
         setEditedDetails({
-          Username: data.Username || "",
-          email: data.email || "",
-          Role: data.Role || "",
+            Username: data.Username || "",
+            email: data.email || "",
+            Role: data.Role || "",
+          
         });
       } catch (error) {
         console.error("Error fetching user data:", error);
@@ -33,12 +35,14 @@ const EditUser = ({ isOpen, onClose, id }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = {
-      Username: editedDetails.Username,
-      email: editedDetails.email,
-      Role: editedDetails.Role,
+    
+      if(!editedDetails.Username||
+       !editedDetails.email||
+       !editedDetails.Role){
+        toast.error("Enter details in each field.");
+        return; 
     };
-    console.log(JSON.stringify(formData));
+    
     try {
       const response = await fetch(
         `http://localhost:5000/userdashboard/userupdate/${id}`,
@@ -47,7 +51,7 @@ const EditUser = ({ isOpen, onClose, id }) => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(editedDetails),
         }
       );
 

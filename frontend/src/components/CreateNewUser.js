@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link ,useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 const CreateNewUser = () => {
   const navigate = useNavigate();
@@ -19,20 +20,22 @@ const CreateNewUser = () => {
 
   const handlecreateuser = async (e) => {
     e.preventDefault();
-
-    const formData = {
-      Username: editedDetails.Username,
-      email: editedDetails.email,
-      Role: editedDetails.Role,
-    };
-    console.log(JSON.stringify(formData));
+    if (
+        !editedDetails.user_name ||
+        !editedDetails.email ||
+        !editedDetails.role
+      ) {
+        toast.error("Enter details in each field.");
+        return;
+      }
+    
     try {
       const response = await fetch(`http://localhost:5000/userdashboard/newuser`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(editedDetails),
       });
 
       if (response.ok) {
