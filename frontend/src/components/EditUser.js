@@ -77,7 +77,7 @@ const EditUser = ({ isOpen, onClose, id }) => {
       className={`fixed inset-0 z-50 overflow-auto ${isOpen ? "" : "hidden"}`}
     >
       <div className="flex items-center justify-center min-h-screen">
-        <div className="bg-slate-200 p-8 rounded shadow-md w-full max-w-md">
+        <div className="bg-gradient-to-r from-blue-100 via-sky-200 to-blue-100 ring-2 ring-sky-400 p-8 rounded shadow-md w-full max-w-md">
           <h2 className="text-2xl font-bold mb-4">Edit User Details</h2>
           <form onSubmit={handleSubmit}>
             <label className="block mb-4">
@@ -109,7 +109,7 @@ const EditUser = ({ isOpen, onClose, id }) => {
                 name="Role"
                 value={editedDetails.Role}
                 onChange={handleChange}
-                className="border border-gray-300 p-2 w-full mt-1"
+                className="border border-stone-300 p-2 w-full mt-1"
               />
             </label>
 
@@ -117,13 +117,13 @@ const EditUser = ({ isOpen, onClose, id }) => {
               <button
                 type="button"
                 onClick={onClose}
-                className="mr-2 bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600"
+                className="mr-2 bg-sky-700 text-white px-4 py-2 rounded-md hover:bg-cyan-600"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+                className="bg-sky-500 text-white px-4 py-2 rounded-md hover:bg-cyan-700"
               >
                 Save Changes
               </button>

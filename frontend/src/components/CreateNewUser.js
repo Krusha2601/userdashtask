@@ -5,7 +5,7 @@ import { Link ,useNavigate } from "react-router-dom";
 const CreateNewUser = () => {
   const navigate = useNavigate();
   const [editedDetails, setEditedDetails] = useState({
-    username: "",
+    Username: "",
     email: "",
     Role: "",
   });
@@ -48,76 +48,64 @@ const CreateNewUser = () => {
   };
 
   return (
-    <form class="max-w-sm mx-auto mt-[150px]" onSubmit={handlecreateuser}>
-      <div className="mb-[50px] font-medium text-blue-500 ">Create User</div>
+    <div className="flex justify-center mt-[250px]">
+    <form class="w-96 h-80 p-2  bg-gradient-to-r from-blue-100 via-sky-200 to-blue-100 ring-2 ring-sky-400 rounded-lg " onSubmit={handlecreateuser}>
+      <div className=" text-center text-xl font-semibold font-serif text-blue-500 p-2">Create User</div>
       <div class="mb-5">
-        <label
-          for="Username"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >
-          Your Username
-        </label>
         <input
           type="text"
           id="Username"
           name="Username"
+          placeholder="Username"
           value={editedDetails.Username}
           onChange={handleChange}
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-sky-500 placeholder-blue-200"
           required
         />
       </div>
       <div class="mb-5">
-        <label
-          for="email"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >
-          Your Email
-        </label>
+
         <input
           type="email"
           id="email"
           name="email"
+          
           value={editedDetails.email}
           onChange={handleChange}
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="name@flowbite.com"
+          class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-sky-500 placeholder-blue-200 "
+          placeholder="Emial: abc@xyz.com"
           required
         />
       </div>
       <div class="mb-5">
-        <label
-          for="role"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >
-          Your Role
-        </label>
         <input
           type="text"
           id="Role"
           name="Role"
+          placeholder="Role"
           value={editedDetails.Role}
           onChange={handleChange}
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  p-2.5  border-sky-500 placeholder-blue-200"
           required
         />
       </div>
-      <div className="flex">
+      <div className="flex justify-center">
         <button
           type="submit"
-          class="ml-[100px] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          class=" text-white bg-sky-700 hover:bg-cyan-700 focus:ring-4 mt-[9px] focus:ring-blue-300 font-medium rounded-lg  w-2/5 h-10 text-sm  px-5  text-center"
         >
           Submit
         </button>
         <button
           type="submit"
-          class="ml-[20px] text-white bg-gray-400 hover:bg-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          class=" m-2 text-white hover:bg-cyan-700 focus:ring-4  focus:ring-blue-300 font-medium rounded-lg text-sm  h-10 px-5 text-center bg-sky-500"
           onClick={() => navigate("/")}
         >
           Back
         </button>
       </div>
     </form>
+    </div>
   );
 };
 export default CreateNewUser;

@@ -47,25 +47,25 @@ const UserDetail = (props) => {
   return (
     <>
      
-      <div className="container mx-auto mt-8 ">
-        <div className="bg-stone-300 rounded shadow-lg ">
-          <h1 className="text-2xl font-sans font-semibold p-5">User Details</h1>
-          <p className="text-lg font-sans font-medium p-5">User ID: {id}</p>
-          <p className="text-lg font-sans font-medium p-5">User Name:- {selectedUser.Username}</p>
-          <p className="text-lg font-sans font-medium p-5">User Email:- {selectedUser.email}</p>
-          <p className="text-lg font-sans font-medium p-5">User Role:- {selectedUser.Role}</p>
+      <div className="flex items-stretch w-full mx-[20px] mt-8 ">
+        <div className=" flex items-center mx-96 bg-gradient-to-r from-blue-100 via-sky-200 to-blue-100 ring-2 ring-sky-400 rounded-lg shadow-lg ">
+          <h1 className="text-2xl text-blue-500 font-serif font-semibold p-5 ">User Details</h1>
+          <p className="text-lg text-blue-500 font-sans font-medium p-5"> ID:- {id}</p>
+          <p className="text-lg text-blue-500 font-sans font-medium p-5"> Name:- {selectedUser.Username}</p>
+          <p className="text-lg text-blue-500 font-sans font-medium p-5"> Email:- {selectedUser.email}</p>
+          <p className="text-lg text-blue-500 font-sans font-medium p-5">Role:- {selectedUser.Role}</p>
 
          
           <div className="p-6 flex space-x-4">
             <button
               onClick={handleEdit}
-              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+              className="bg-sky-700 text-white px-4 py-2 rounded-md hover:bg-cyan-700"
             >
               Edit
             </button>
             <button
               onClick={handleDelete}
-              className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
+              className="bg-sky-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
             >
               Delete
             </button>
