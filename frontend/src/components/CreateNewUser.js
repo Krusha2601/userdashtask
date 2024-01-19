@@ -1,7 +1,7 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { Link ,useNavigate } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const CreateNewUser = () => {
   const navigate = useNavigate();
@@ -62,7 +62,7 @@ const CreateNewUser = () => {
           placeholder="Username"
           value={editedDetails.Username}
           onChange={handleChange}
-          class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-sky-500 placeholder-blue-200"
+          class="border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-sky-500 placeholder-blue-200"
           required
         />
       </div>
@@ -75,7 +75,7 @@ const CreateNewUser = () => {
           
           value={editedDetails.email}
           onChange={handleChange}
-          class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-sky-500 placeholder-blue-200 "
+          class=" border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-sky-500 placeholder-blue-200 "
           placeholder="Emial: abc@xyz.com"
           required
         />
@@ -88,7 +88,7 @@ const CreateNewUser = () => {
           placeholder="Role"
           value={editedDetails.Role}
           onChange={handleChange}
-          class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  p-2.5  border-sky-500 placeholder-blue-200"
+          class="border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  p-2.5  border-sky-500 placeholder-blue-200"
           required
         />
       </div>
